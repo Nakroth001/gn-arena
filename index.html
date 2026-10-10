@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151313">
+  <meta name="description" content="GN Arena — esporte, cerveja gelada, drinks e os melhores lanches para curtir com os amigos.">
+  <title>GN Arena | Esporte, Bar & Diversão</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #c94e50;
+      --red-dark: #a9363b;
+      --green: #8caf79;
+      --black: #151313;
+      --panel: #201d1d;
+      --white: #f8f5f0;
+      --muted: #b7adab;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--green);
+      color: #172015;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(21, 19, 19, .96);
+      border-bottom: 1px solid #ffffff12;
+      backdrop-filter: blur(14px);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      border-radius: 12px 4px 12px 4px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: white;
+      transform: skew(-4deg);
+    }
+
+    .logo-name {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: .8px;
+    }
+
+    .logo-name span {
+      color: var(--red);
+    }
+
+    .logo-caption {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    nav a {
+      color: #d5ceca;
+      font-size: 12px;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      padding: 12px 17px;
+      border-radius: 5px;
+      background: var(--red);
+      color: white;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, #151313 0%, #151313f2 38%, #1513139c 70%, #15131360 100%),
+        linear-gradient(0deg, #151313 0%, transparent 40%),
+        url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2000&q=85") center/cover;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 17%;
+      width: 5px;
+      height: 190px;
+      background: var(--red);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 85px 0 100px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      height: 2px;
+      width: 27px;
+      background: var(--green);
+    }
+
+    h1, h2, h3 {
+      font-family: "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      line-height: .98;
+    }
+
+    h1 {
+      font-size: clamp(60px, 9vw, 106px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span {
+      color: var(--red);
+      display: block;
+    }
+
+    .hero p {
+      max-width: 450px;
+      margin-top: 24px;
+      color: #d0c8c4;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      min-height: 49px;
+      padding: 14px 23px;
+      border-radius: 5px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-red:hover {
+      background: var(--red-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid #ffffff50;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff10;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 40px;
+      font-size: 11px;
+      color: #d0c8c4;
+    }
+
+    .status-dot {
+      height: 8px;
+      width: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px #8caf7970;
+    }
+
+    .intro-strip {
+      background: #1d1a1a;
+      border-top: 1px solid #ffffff0d;
+      border-bottom: 1px solid #ffffff0d;
+    }
+
+    .strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .strip-item {
+      padding: 24px 15px;
+      text-align: center;
+      border-right: 1px solid #ffffff10;
+    }
+
+    .strip-item:last-child {
+      border: 0;
+    }
+
+    .strip-item strong {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 23px;
+      text-transform: uppercase;
+    }
+
+    .strip-item span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(42px, 6vw, 63px);
+      font-weight: 800;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .section-heading p {
+      max-width: 380px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .food-section {
+      background: #191616;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .food-card {
+      background: var(--panel);
+      border: 1px solid #ffffff0c;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-5px);
+      border-color: #c94e5066;
+    }
+
+    .food-image {
+      height: 230px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .food-image img {
+      height: 100%;
+      transition: transform .4s;
+    }
+
+    .food-card:hover .food-image img {
+      transform: scale(1.05);
+    }
+
+    .food-tag {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 6px 10px;
+      border-radius: 3px;
+      background: var(--red);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .food-info {
+      padding: 23px;
+    }
+
+    .food-info h3 {
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .food-info p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .food-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .experience {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, #151313 0%, #151313f0 42%, #15131370 100%),
+        url("https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+
+    .experience-content {
+      max-width: 650px;
+    }
+
+    .experience h2 {
+      font-size: clamp(48px, 7vw, 78px);
+      margin-bottom: 24px;
+    }
+
+    .experience h2 span {
+      color: var(--green);
+    }
+
+    .experience p {
+      color: #d0c8c4;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 480px;
+    }
+
+    .experience .btn {
+      margin-top: 28px;
+    }
+
+    .sports-section {
+      background: #f2eee8;
+      color: #211c1c;
+    }
+
+    .sports-section .eyebrow {
+      color: var(--red-dark);
+    }
+
+    .sports-section .eyebrow::before {
+      background: var(--red-dark);
+    }
+
+    .sports-section .section-heading p {
+      color: #716967;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 23px;
+    }
+
+    .sport-card {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      border-radius: 8px;
+      color: white;
+      background: #252020;
+    }
+
+    .sport-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: transform .5s;
+    }
+
+    .sport-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .sport-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, #100e0eeb, transparent 85%);
+    }
+
+    .sport-copy {
+      position: absolute;
+      z-index: 2;
+      left: 26px;
+      bottom: 25px;
+    }
+
+    .sport-copy span {
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .sport-copy h3 {
+      font-size: 39px;
+      margin: 8px 0;
+    }
+
+    .sport-copy p {
+      font-size: 12px;
+      color: #e0d8d5;
+    }
+
+    .visit-section {
+      background: #201c1c;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .visit-grid h2 {
+      font-size: clamp(45px, 6vw, 66px);
+      margin-bottom: 20px;
+    }
+
+    .visit-grid h2 span {
+      color: var(--red);
+    }
+
+    .visit-grid p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .visit-details {
+      display: grid;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .detail {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .detail-icon {
+      min-width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: #c94e501b;
+      border: 1px solid #c94e5040;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .detail span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .visit-photo {
+      min-height: 440px;
+      height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .visit-photo img {
+      height: 100%;
+      min-height: 440px;
+    }
+
+    .visit-photo img {
+      object-position: center;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 90px 20px;
+      background: var(--red);
+    }
+
+    .final-cta .eyebrow {
+      color: white;
+      justify-content: center;
+    }
+
+    .final-cta .eyebrow::before {
+      background: white;
+    }
+
+    .final-cta h2 {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: clamp(45px, 7vw, 76px);
+    }
+
+    .final-cta p {
+      margin: 20px auto 0;
+      max-width: 470px;
+      color: #fff0ed;
+      font-size: 13px;
+    }
+
+    .final-cta .btn {
+      margin-top: 28px;
+      background: var(--black);
+    }
+
+    footer {
+      padding: 35px 0;
+      background: #100e0e;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #948a87;
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .social-link {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .visit-grid {
+        gap: 30px;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .topbar {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .navbar {
+        min-height: 69px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+        gap: 12px;
+      }
+
+      .logo-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .logo-name {
+        font-size: 23px;
+      }
+
+      nav {
+        width: 100%;
+        order: 2;
+        overflow-x: auto;
+        padding: 6px 0 2px;
+        gap: 22px;
+      }
+
+      nav a {
+        white-space: nowrap;
+      }
+
+      nav .nav-cta {
+        padding: 9px 12px;
+      }
+
+      .hero {
+        min-height: 590px;
+        background-position: 58% center;
+      }
+
+      .hero-content {
+        padding: 70px 0 75px;
+      }
+
+      h1 {
+        font-size: clamp(57px, 15vw, 78px);
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 300px;
+      }
+
+      .strip-item {
+        padding: 18px 5px;
+      }
+
+      .strip-item strong {
+        font-size: 18px;
+      }
+
+      .strip-item span {
+        font-size: 9px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 28px;
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .food-image {
+        height: 240px;
+      }
+
+      .experience {
+        background-position: 60% center;
+      }
+
+      .sports-grid,
+      .visit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sport-card {
+        min-height: 280px;
+      }
+
+      .visit-photo,
+      .visit-photo img {
+        min-height: 300px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-copy {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    ⚽ Esporte • 🍻 Bar • 🍔 Resenha com os amigos
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="#inicio" aria-label="GN Arena - Início">
+        <div class="logo-mark">GN</div>
+        <div>
+          <div class="logo-name">GN <span>ARENA</span></div>
+          <div class="logo-caption">ESPORTE & EXPERIÊNCIA</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Bar & Lanches</a>
+        <a href="#esportes">Esportes</a>
+        <a href="#visite">Onde estamos</a>
+        <a href="#contato" class="nav-cta">Vem pra GN ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Seu ponto de encontro</div>
+
+          <h1>
+            O jogo é bom.
+            <span>A resenha é melhor.</span>
+          </h1>
+
+          <p>
+            Futebol, vôlei, cerveja gelada, drinks e aquele lanche
+            que combina com qualquer momento. Tudo em um só lugar.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cardapio" class="btn btn-red">
+              🍔 CONHEÇA NOSSO BAR
+            </a>
+
+            <a href="#esportes" class="btn btn-outline">
+              CONHEÇA A ARENA ↗
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span class="status-dot"></span>
+            <span>Chame a galera e venha curtir a GN Arena.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="intro-strip">
+      <div class="container strip-inner">
+        <div class="strip-item">
+          <strong>🍺 Bar</strong>
+          <span>Cervejas e drinks</span>
+        </div>
+
+        <div class="strip-item">
+          <strong>🍔 Lanches</strong>
+          <span>Sabor pra compartilhar</span>
+        </div>
+
+        <div class="strip-item">
+          <strong>⚽ Arena</strong>
+          <span>Esporte e diversão</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="food-section" id="cardapio">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">A estrela da resenha</div>
+            <h2>Seu próximo pedido<br>começa <span>aqui.</span></h2>
+          </div>
+
+          <p>
+            Do primeiro gole ao último pedaço: o lugar certo
+            para relaxar, reunir os amigos e aproveitar.
+          </p>
+        </div>
+
+        <div class="food-grid">
+          <article class="food-card">
+            <div class="food-image">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+                alt="Hambúrguer artesanal suculento"
+                loading="lazy">
+              <span class="food-tag">Pra matar a fome</span>
+            </div>
+
+            <div class="food-info">
+              <h3>Hambúrgueres</h3>
+              <p>
+                A combinação perfeita para acompanhar a partida
+                ou prolongar a conversa com os amigos.
+              </p>
+              <a class="food-link" href="#contato">Quero conhecer ↗</a>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-image">
+              <img
+                src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=900&q=85"
+                alt="Cerveja gelada servida em copo"
+                loading="lazy">
+              <span class="food-tag">Sempre combina</span>
+            </div>
+
+            <div class="food-info">
+              <h3>Cervejas</h3>
+              <p>
+                A pedida clássica para brindar, torcer e
+                curtir aquele encontro que não tem hora pra acabar.
+              </p>
+              <a class="food-link" href="#contato">Quero conhecer ↗</a>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-image">
+              <img
+                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=85"
+                alt="Drinks preparados e servidos em copos"
+                loading="lazy">
+              <span class="food-tag">Hora de brindar</span>
+            </div>
+
+            <div class="food-info">
+              <h3>Drinks</h3>
+              <p>
+                Para quem gosta de variar, experimentar sabores
+                e deixar a noite ainda mais especial.
+              </p>
+              <a class="food-link" href="#contato">Quero conhecer ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <p style="text-align:center;color:#9e9490;font-size:11px;margin-top:25px;">
+          Imagens ilustrativas. Consulte o cardápio e a disponibilidade no local.
+        </p>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="container">
+        <div class="experience-content">
+          <div class="eyebrow">Muito além do jogo</div>
+
+          <h2>
+            Aqui a diversão<br>
+            <span>também entra em campo.</span>
+          </h2>
+
+          <p>
+            Tem dia de jogar, dia de torcer e dia de simplesmente
+            sentar, pedir alguma coisa e curtir a companhia.
+            Na GN Arena, o importante é aproveitar o momento.
+          </p>
+
+          <a href="#esportes" class="btn btn-red">
+            DESCOBRIR A ARENA ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sports-section" id="esportes">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Junte seu time</div>
+            <h2>Seu esporte.<br>Sua <span>galera.</span></h2>
+          </div>
+
+          <p>
+            Reúna os amigos, organize a partida e venha aproveitar
+            a estrutura esportiva da GN Arena.
+          </p>
+        </div>
+
+        <div class="sports-grid">
+          <article class="sport-card">
+            <img
+              src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1100&q=85"
+              alt="Campo de futebol"
+              loading="lazy">
+
+            <div class="sport-copy">
+              <span>ESPORTE & COMPETIÇÃO</span>
+              <h3>Futebol Society</h3>
+              <p>Chame o time e venha jogar.</p>
+            </div>
+          </article>
+
+          <article class="sport-card">
+            <img
+              src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1100&q=85"
+              alt="Partida de vôlei"
+              loading="lazy">
+
+            <div class="sport-copy">
+              <span>ENERGIA & DIVERSÃO</span>
+              <h3>Vôlei</h3>
+              <p>Monte sua equipe e entre no jogo.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit-section" id="visite">
+      <div class="container visit-grid">
+        <div>
+          <div class="eyebrow">Seu próximo destino</div>
+
+          <h2>
+            A gente se<br>
+            encontra na <span>GN.</span>
+          </h2>
+
+          <p>
+            Já sabe onde vai ser a próxima resenha?
+            Reúna sua turma e venha conhecer a GN Arena.
+            Estamos esperando por vocês!
+          </p>
+
+          <div class="visit-details">
+            <div class="detail">
+              <div class="detail-icon">📍</div>
+              <div>
+                <strong>Onde fica?</strong>
+                <span>Endereço a ser confirmado.</span>
+              </div>
+            </div>
+
+            <div class="detail">
+              <div class="detail-icon">🕒</div>
+              <div>
+                <strong>Horários</strong>
+                <span>Consulte os horários de funcionamento.</span>
+              </div>
+            </div>
+
+            <div class="detail">
+              <div class="detail-icon">⚽</div>
+              <div>
+                <strong>Quer jogar?</strong>
+                <span>Entre em contato para consultar reservas.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contato" class="btn btn-red" style="margin-top:30px;">
+            ENTRAR EM CONTATO ↗
+          </a>
+        </div>
+
+        <div class="visit-photo">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85"
+            alt="Ambiente acolhedor para reunir os amigos"
+            loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contato">
+      <div class="eyebrow">O convite está feito</div>
+
+      <h2>Chama a galera.<br>O resto é com a GN.</h2>
+
+      <p>
+        Esporte, comida boa e momentos para compartilhar.
+        Sua próxima resenha pode começar aqui.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer">
+        SIGA A GN ARENA ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#inicio">
+        <div class="logo-mark">GN</div>
+        <div>
+          <div class="logo-name">GN <span>ARENA</span></div>
+          <div class="logo-caption">ESPORTE & EXPERIÊNCIA</div>
+        </div>
+      </a>
+
+      <div class="footer-copy">
+        © <span id="year"></span> GN Arena. Todos os direitos reservados.
+        <br>Site demonstrativo desenvolvido para apresentação.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
