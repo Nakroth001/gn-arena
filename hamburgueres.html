@@ -334,27 +334,41 @@
     document.querySelectorAll('.adicionais input').forEach(opcao => {
       opcao.addEventListener('change', atualizar);
     });
+ 
+   function enviarPedido() {
+  if (!carrinho.length) {
+    alert('Adicione pelo menos um lanche antes de enviar.');
+    return;
+  }
 
-    function enviarPedido() {
-      if (!carrinho.length) {
-        alert('Adicione pelo menos um lanche antes de enviar.');
-        return;
-      }
+  const endereco = document.getElementById('endereco').value.trim();
 
-      const linhas = ['Olá, GN Arena! Quero fazer este pedido:', ''];
-      carrinho.forEach(item => {
-        linhas.push(`${item.quantidade}x ${item.nome} — ${moeda(item.preco * item.quantidade)}`);
-      });
+  if (!endereco) {
+    alert('Digite seu endereço de entrega.');
+    document.getElementById('endereco').focus();
+    return;
+  }
 
-      document.querySelectorAll('.adicionais input:checked').forEach(opcao => {
-        linhas.push(`Adicional: ${opcao.value} — ${moeda(Number(opcao.dataset.preco))}`);
-      });
+  const linhas = [
+    'Olá, GN Arena! Quero fazer este pedido:',
+    '',
+    '📍 Endereço de entrega: ' + endereco,
+    ''
+  ];
 
-      linhas.push('', `Total: ${moeda(calcularTotal())}`);
-      const mensagem = encodeURIComponent(linhas.join('\n'));
-      window.open('https://wa.me/5533998759301?text=' + mensagem, '_blank');
-    }
+  carrinho.forEach(item => {
+    linhas.push(`${item.quantidade}x ${item.nome} — ${moeda(item.preco * item.quantidade)}`);
+  });
 
+  document.querySelectorAll('.adicionais input:checked').forEach(opcao => {
+    linhas.push(`Adicional: ${opcao.value} — ${moeda(Number(opcao.dataset.preco))}`);
+  });
+
+  linhas.push('', `Total: ${moeda(calcularTotal())}`);
+
+  const mensagem = encodeURIComponent(linhas.join('\n'));
+  window.open('https://wa.me/5533998759301?text=' + mensagem, '_blank');
+}
     atualizar();
   </script>
 </body>
