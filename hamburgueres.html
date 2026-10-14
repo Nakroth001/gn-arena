@@ -264,7 +264,19 @@
 
     <section class="pedido">
       <h2>SEU PEDIDO</h2>
+      
       <input id="endereco" type="text" placeholder="📍 Digite seu endereço de entrega" style="width:100%;padding:12px;margin:15px 0;background:#191919;color:white;border:1px solid #444;border-radius:6px;box-sizing:border-box;">
+      <label for="pagamento" style="display:block;margin:15px 0 8px;font-weight:bold">
+  FORMA DE PAGAMENTO
+</label>
+
+<select id="pagamento" style="width:100%;padding:12px;margin-bottom:20px;background:#191919;color:white;border:1px solid #444;border-radius:6px;font:inherit">
+  <option value="">Selecione a forma de pagamento</option>
+  <option value="Pix">Pix</option>
+  <option value="Dinheiro">Dinheiro</option>
+  <option value="Cartão de crédito">Cartão de crédito</option>
+  <option value="Cartão de débito">Cartão de débito</option>
+</select>
       <div id="itens">Você ainda não adicionou nenhum lanche.</div>
 
       <h3>Adicionais</h3>
@@ -348,13 +360,20 @@
     document.getElementById('endereco').focus();
     return;
   }
+const pagamento = document.getElementById('pagamento').value;
 
-  const linhas = [
-    'Olá, GN Arena! Quero fazer este pedido:',
-    '',
-    '📍 Endereço de entrega: ' + endereco,
-    ''
-  ];
+if (!pagamento) {
+  alert('Selecione a forma de pagamento.');
+  document.getElementById('pagamento').focus();
+  return;
+}
+ const linhas = [
+  'Olá, GN Arena! Quero fazer este pedido:',
+  '',
+  '📍 Endereço de entrega: ' + endereco,
+  '💳 Forma de pagamento: ' + pagamento,
+  ''
+];
 
   carrinho.forEach(item => {
     linhas.push(`${item.quantidade}x ${item.nome} — ${moeda(item.preco * item.quantidade)}`);
