@@ -378,12 +378,29 @@ if (!pagamento) {
   document.getElementById('pagamento').focus();
   return;
 }
+     let infoTroco = '';
+
+if (pagamento === 'Dinheiro') {
+  const troco = document.getElementById('troco').value;
+  const valorTroco = document.getElementById('valorTroco').value;
+
+  if (troco === 'Sim' && (!valorTroco || Number(valorTroco) <= 0)) {
+    alert('Informe o valor para o troco.');
+    document.getElementById('valorTroco').focus();
+    return;
+  }
+
+  infoTroco = troco === 'Sim'
+    ? 'Troco para: R$ ' + Number(valorTroco).toFixed(2).replace('.', ',')
+    : 'Não precisa de troco';
+}
  const linhas = [
   'Olá, GN Arena! Quero fazer este pedido:',
   '',
   '📍 Endereço de entrega: ' + endereco,
-  '💳 Forma de pagamento: ' + pagamento,
-  ''
+ '💳 Forma de pagamento: ' + pagamento,
+...(infoTroco ? [infoTroco] : []),
+''
 ];
 
   carrinho.forEach(item => {
