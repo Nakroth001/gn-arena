@@ -270,13 +270,24 @@
   FORMA DE PAGAMENTO
 </label>
 
-<select id="pagamento" style="width:100%;padding:12px;margin-bottom:20px;background:#191919;color:white;border:1px solid #444;border-radius:6px;font:inherit">
+<select id="pagamento" onchange="document.getElementById('campoTroco').style.display = this.value === 'Dinheiro' ? 'block' : 'none';" style="width:100%;padding:12px;margin-bottom:20px;background:#191919;color:white;border:1px solid #444;border-radius:6px;font:inherit">
   <option value="">Selecione a forma de pagamento</option>
   <option value="Pix">Pix</option>
   <option value="Dinheiro">Dinheiro</option>
   <option value="Cartão de crédito">Cartão de crédito</option>
   <option value="Cartão de débito">Cartão de débito</option>
 </select>
+      <div id="campoTroco" style="display:none;margin-bottom:20px;">
+  <label for="troco" style="display:block;margin-bottom:8px;">
+    PRECISA DE TROCO?
+  </label>
+  <select id="troco" onchange="mostrarValorTroco()" style="width:100%;padding:12px;background:#191919;color:white;border:1px solid #444;border-radius:6px;font:inherit;">
+    <option value="Não precisa de troco">Não preciso de troco</option>
+    <option value="Sim">Sim, preciso de troco</option>
+  </select>
+
+  <input id="valorTroco" type="number" min="0" step="0.01" placeholder="Troco para qual valor? Ex.: 50" style="display:none;width:100%;padding:12px;margin-top:10px;background:#191919;color:white;border:1px solid #444;border-radius:6px;box-sizing:border-box;">
+</div>
       <div id="itens">Você ainda não adicionou nenhum lanche.</div>
 
       <h3>Adicionais</h3>
@@ -387,6 +398,12 @@ if (!pagamento) {
 
   const mensagem = encodeURIComponent(linhas.join('\n'));
   window.open('https://wa.me/5533998759301?text=' + mensagem, '_blank');
+}
+    function mostrarValorTroco() {
+  const precisaTroco = document.getElementById('troco').value === 'Sim';
+
+  document.getElementById('valorTroco').style.display =
+    precisaTroco ? 'block' : 'none';
 }
     atualizar();
   </script>
