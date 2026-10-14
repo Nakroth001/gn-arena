@@ -229,15 +229,6 @@ footer { border-top:1px solid #292929; padding:28px 0; }
       <div class="brand-mark">⚽</div>
       <div class="brand-name"><span>GN</span> ARENA<small>ESPORTE & RESENHA</small></div>
     </a>
-    <button class="menu-toggle" aria-label="Abrir menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
-    <nav>
-      <a href="#bar">BAR & CARDÁPIO</a>
-      <a href="#esportes">ESPORTES</a>
-      <a href="#estrutura">A ARENA</a>
-      <a href="#contato" class="nav-cta">FALE COM A GENTE ↗</a>
-    </nav>
-  </div>
-</header>
 
 <main>
 <section class="hero" id="inicio">
@@ -278,52 +269,170 @@ footer { border-top:1px solid #292929; padding:28px 0; }
     </div>
 
     <div class="bar-grid">
-      <article class="bar-feature">
-        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=85" alt="Ambiente de bar aconchegante" loading="lazy">
-        <div class="bar-feature-content">
-          <span class="bar-label">A RESENHA É AQUI</span>
-          <h3>SEU LUGAR<br>É NA GN.</h3>
-          <p>Junta a turma, escolhe sua bebida favorita e aproveita o clima. A gente cuida do cenário; você traz a resenha.</p>
-        </div>
-      </article>
+  <div class="food-grid">
 
-      <div class="food-grid">
-        <article class="food-card">
-          <img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=900&q=85" alt="Cervejas geladas" loading="lazy">
-          <div class="food-info">
-            <h3>CERVEJA GELADA</h3>
-            <p>Aquela gelada para acompanhar o jogo e brindar com os amigos.</p>
-            <a class="food-link" href="#contato">Bora brindar ↗</a>
-          </div>
-        </article>
-        <article class="food-card">
-          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85" alt="Porção de batatas fritas" loading="lazy">
-          <div class="food-info">
-            <h3>PORÇÕES</h3>
-            <p>Petiscos para dividir com a turma durante a resenha.</p>
-            <a class="food-link" href="#contato">Quero provar ↗</a>
-          </div>
-        </article>
-        <article class="food-card">
-          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Hambúrguer artesanal" loading="lazy">
-          <div class="food-info">
-            <h3>HAMBÚRGUER</h3>
-            <p>Uma opção caprichada para matar a fome depois da partida.</p>
-            <a class="food-link" href="#contato">Bateu a fome ↗</a>
-          </div>
-        </article>
-        <article class="food-card">
-          <img src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=900&q=85" alt="Bebida refrescante" loading="lazy">
-          <div class="food-info">
-            <h3>BEBIDAS</h3>
-            <p>Opções para refrescar e deixar a resenha ainda melhor.</p>
-            <a class="food-link" href="#contato">Conheça ↗</a>
-          </div>
-        </article>
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Adão e Eva" loading="lazy">
+      <div class="food-info">
+        <h3>ADÃO E EVA</h3>
+        <p>Brioche artesanal, bife artesanal, costela bovina desfiada, mussarela, picles, alface, tomate, cebola caramelizada e batata frita.</p>
+        <strong>R$ 45,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('Adão e Eva',45)">ADICIONAR AO PEDIDO +</button>
       </div>
-    </div>
+    </article>
+
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=900&q=85" alt="X-Bacon" loading="lazy">
+      <div class="food-info">
+        <h3>X-BACON</h3>
+        <p>Brioche artesanal, bife artesanal, bacon, alface, tomate, cebola roxa, molho da casa, mussarela e batata frita.</p>
+        <strong>R$ 39,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('X-Bacon',39)">ADICIONAR AO PEDIDO +</button>
+      </div>
+    </article>
+
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=85" alt="Tropical Burguer" loading="lazy">
+      <div class="food-info">
+        <h3>TROPICAL BURGUER</h3>
+        <p>Brioche artesanal, bife artesanal, bacon, abacaxi grelhado, cebola caramelizada, maionese de bacon com abacaxi, mussarela e batata frita.</p>
+        <strong>R$ 42,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('Tropical Burguer',42)">ADICIONAR AO PEDIDO +</button>
+      </div>
+    </article>
+
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="X-Burguer" loading="lazy">
+      <div class="food-info">
+        <h3>X-BURGUER</h3>
+        <p>Brioche artesanal, bife artesanal, cebola caramelizada, alface, tomate, molho da casa, cebola roxa, mussarela e batata frita.</p>
+        <strong>R$ 31,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('X-Burguer',31)">ADICIONAR AO PEDIDO +</button>
+      </div>
+    </article>
+
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Duplo com Cheddar" loading="lazy">
+      <div class="food-info">
+        <h3>DUPLO COM CHEDDAR</h3>
+        <p>Brioche artesanal, dois bifes artesanais, picles agridoce, cebola roxa, molho da casa, cheddar e batata frita.</p>
+        <strong>R$ 41,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('Duplo com Cheddar',41)">ADICIONAR AO PEDIDO +</button>
+      </div>
+    </article>
+
+    <article class="food-card">
+      <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433a?auto=format&fit=crop&w=900&q=85" alt="X-Tudo" loading="lazy">
+      <div class="food-info">
+        <h3>X-TUDO</h3>
+        <p>Brioche artesanal, bife artesanal, alface, tomate, cebola roxa, cebola caramelizada, bacon, ovo, molho da casa e batata frita.</p>
+        <strong>R$ 41,00</strong>
+        <button class="btn btn-outline" onclick="adicionarLanche('X-Tudo',41)">ADICIONAR AO PEDIDO +</button>
+      </div>
+    </article>
+
   </div>
-</section>
+</div>
+
+<div class="container" id="pedido-online">
+  <div class="food-info">
+    <h2>MONTE SEU <span>PEDIDO</span></h2>
+    <p>Escolha seus lanches, ajuste as quantidades e envie o pedido pelo WhatsApp.</p>
+
+    <div id="lista-pedido">Seu pedido está vazio.</div>
+
+    <h3>ADICIONAIS</h3>
+    <label><input type="checkbox" value="Bife extra|10" class="adicional"> Bife extra — R$ 10,00</label><br>
+    <label><input type="checkbox" value="Bacon|8" class="adicional"> Bacon — R$ 8,00</label><br>
+    <label><input type="checkbox" value="Ovo|3" class="adicional"> Ovo — R$ 3,00</label><br>
+    <label><input type="checkbox" value="Abacaxi|3" class="adicional"> Abacaxi — R$ 3,00</label><br>
+    <label><input type="checkbox" value="Queijo|3" class="adicional"> Queijo — R$ 3,00</label><br><br>
+
+    <h3>Total: <span id="total-pedido">R$ 0,00</span></h3>
+    <button class="btn btn-outline" onclick="enviarPedidoWhatsApp()">ENVIAR PEDIDO PELO WHATSAPP ↗</button>
+  </div>
+</div>
+
+<script>
+const carrinhoGN = [];
+
+function adicionarLanche(nome, preco) {
+  const item = carrinhoGN.find(p => p.nome === nome);
+  if (item) {
+    item.quantidade++;
+  } else {
+    carrinhoGN.push({ nome, preco, quantidade: 1 });
+  }
+  atualizarPedidoGN();
+}
+
+function atualizarPedidoGN() {
+  const lista = document.getElementById('lista-pedido');
+
+  if (carrinhoGN.length === 0) {
+    lista.textContent = 'Seu pedido está vazio.';
+  } else {
+    lista.innerHTML = carrinhoGN.map((item, i) => `
+      <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;margin:12px 0;">
+        <span>${item.nome} — R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}</span>
+        <div>
+          <button onclick="alterarQuantidadeGN(${i},-1)">−</button>
+          <span style="margin:0 8px">${item.quantidade}</span>
+          <button onclick="alterarQuantidadeGN(${i},1)">+</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  calcularTotalGN();
+}
+
+function alterarQuantidadeGN(indice, variacao) {
+  carrinhoGN[indice].quantidade += variacao;
+  if (carrinhoGN[indice].quantidade <= 0) carrinhoGN.splice(indice, 1);
+  atualizarPedidoGN();
+}
+
+function calcularTotalGN() {
+  let total = carrinhoGN.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+
+  document.querySelectorAll('.adicional:checked').forEach(opcao => {
+    const partes = opcao.value.split('|');
+    total += Number(partes[1]);
+  });
+
+  document.getElementById('total-pedido').textContent =
+    total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+document.querySelectorAll('.adicional').forEach(opcao => {
+  opcao.addEventListener('change', calcularTotalGN);
+});
+
+function enviarPedidoWhatsApp() {
+  if (carrinhoGN.length === 0) {
+    alert('Adicione pelo menos um lanche ao pedido.');
+    return;
+  }
+
+  let mensagem = 'Olá, GN Arena! Quero fazer este pedido:%0A%0A';
+  carrinhoGN.forEach(item => {
+    mensagem += `- ${item.quantidade}x ${item.nome} — R$ ${(item.preco * item.quantidade).toFixed(2).replace('.', ',')}%0A`;
+  });
+
+  let total = carrinhoGN.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+
+  document.querySelectorAll('.adicional:checked').forEach(opcao => {
+    const partes = opcao.value.split('|');
+    mensagem += `- Adicional: ${partes[0]} — R$ ${Number(partes[1]).toFixed(2).replace('.', ',')}%0A`;
+    total += Number(partes[1]);
+  });
+
+  mensagem += `%0A*Total: R$ ${total.toFixed(2).replace('.', ',')}*`;
+
+  window.open('https://wa.me/5533998759301?text=' + mensagem, '_blank');
+}
+</script>
 
 <section id="esportes">
   <div class="container">
