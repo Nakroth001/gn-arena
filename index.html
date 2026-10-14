@@ -219,6 +219,22 @@ footer { border-top:1px solid #292929; padding:28px 0; }
   .why-grid { grid-template-columns:1fr; }
   .footer-inner { align-items:start; flex-direction:column; }
 }
+  .cardapio-destaque {
+  transform: scale(1.06);
+  border: 2px solid #e63939;
+  box-shadow: 0 0 22px rgba(230, 57, 57, 0.25);
+  z-index: 2;
+}
+
+.cardapio-destaque h3 {
+  font-size: 1.5rem;
+  color: #ff4545;
+}
+
+.cardapio-destaque .food-link {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
 </style>
 </head>
 
@@ -304,10 +320,10 @@ footer { border-top:1px solid #292929; padding:28px 0; }
             <a class="food-link" href="#contato">Quero provar ↗</a>
           </div>
         </article>
-        <article class="food-card">
+        <article class="food-card cardapio-destaque">
           <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Hambúrguer artesanal" loading="lazy">
           <div class="food-info">
-            <h3>HAMBÚRGUER</h3>
+            <h3>CARDÁPIO COMPLETO</h3>
             <p>Uma opção caprichada para matar a fome depois da partida.</p>
            <a class="food-link" href="hamburgueres.html">Ver cardápio ↗</a>
           </div>
