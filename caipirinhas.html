@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101010">
+    <title>Caipirinhas | GN Arena</title>
+    <meta name="description" content="Confira o cardápio de caipirinhas da GN Arena. Sabores especiais preparados para você.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #101010;
+            --card: #191919;
+            --text: #f7f5f0;
+            --muted: #b3b0a9;
+            --red: #d92e36;
+            --green: #638b53;
+            --border: rgba(255,255,255,.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topbar {
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .back-link {
+            color: var(--muted);
+            font-size: 13px;
+            transition: color .2s;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: 340px;
+            padding: 75px 20px 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                linear-gradient(rgba(12,12,12,.68), rgba(12,12,12,.94)),
+                url('https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=1800&q=85')
+                center 48% / cover;
+        }
+
+        .eyebrow {
+            color: #a8c998;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 66px);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        h1 span {
+            color: #d85b5e;
+        }
+
+        .hero p {
+            color: #ddd9d1;
+            font-size: 15px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .menu-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 24px 80px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .drink-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .drink-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(217,46,54,.5);
+        }
+
+        .drink-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .drink-top h3 {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .price {
+            color: #a8c998;
+            font-size: 15px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .drink-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 45px 20px;
+            background: #171717;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact h2 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: background .2s;
+        }
+
+        .whatsapp:hover {
+            background: #527543;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            color: #777;
+            font-size: 11px;
+        }
+
+        @media (max-width: 650px) {
+            .topbar {
+                padding: 18px 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .back-link {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 300px;
+                padding: 60px 22px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .menu-section {
+                padding: 48px 17px 60px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 13px;
+            }
+
+            .drink-card {
+                padding: 21px;
+            }
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <a href="index.html" class="logo">GN <span>ARENA</span></a>
+        <a href="index.html" class="back-link">← Voltar ao início</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <div class="eyebrow">GN Arena · Cardápio</div>
+                <h1>Nossas <span>Caipirinhas</span></h1>
+                <p>Sabores especiais, ingredientes selecionados e o toque perfeito para aproveitar cada momento.</p>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="section-heading">
+                <h2>Escolha seu sabor</h2>
+                <p>Preparadas especialmente para você.</p>
+            </div>
+
+            <div class="menu-grid">
+
+                <article class="drink-card">
+                    <div class="drink-top">
+                        <h3>Caipirinha de Vinho</h3>
+                        <span class="price">R$ 18,00</span>
+                    </div>
+                    <p>Cachaça, limão, xarope de açúcar e vinho tinto.</p>
+                </article>
+
+                <article class="drink-card">
+                    <div class="drink-top">
+                        <h3>Caipirinha de Morango</h3>
+                        <span class="price">R$ 18,00</span>
+                    </div>
+                    <p>Cachaça, limão e geleia de morango.</p>
+                </article>
+
+                <article class="drink-card">
+                    <div class="drink-top">
+                        <h3>Caipirinha de Maracujá</h3>
+                        <span class="price">R$ 18,00</span>
+                    </div>
+                    <p>Cachaça, limão e geleia de maracujá.</p>
+                </article>
+
+                <article class="drink-card">
+                    <div class="drink-top">
+                        <h3>Caipirinha Tradicional</h3>
+                        <span class="price">R$ 15,00</span>
+                    </div>
+                    <p>Cachaça, limão e xarope de açúcar.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Vamos aproveitar?</h2>
+            <p>Entre em contato com a GN Arena para tirar suas dúvidas.</p>
+            <a class="whatsapp"
+               href="https://wa.me/5533998759301"
+               target="_blank"
+               rel="noopener noreferrer">
+                Fale conosco pelo WhatsApp ↗
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        © GN Arena · Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
