@@ -321,7 +321,7 @@ footer { border-top:1px solid #292929; padding:28px 0; }
           <div class="food-info">
             <h3>Drinks</h3>
             <p>Opções de Drinks para todos os gostos🍸.</p>
-            <a class="food-link" href="#contato">Conheça ↗</a>
+            <a class="food-link" href="#lista-drinks">Conheça ↗</a>
           </div>
         </article>
       </div>
@@ -445,6 +445,138 @@ footer { border-top:1px solid #292929; padding:28px 0; }
   }
   .gndrinks-image img {
     height: 280px;
+  }
+}
+</style>
+  <section id="lista-drinks" class="lista-drinks">
+  <div class="lista-drinks-container">
+
+    <div class="lista-drinks-titulo">
+      <span>NOSSA CARTA</span>
+      <h2>DRINKS <em>GN ARENA</em></h2>
+      <p>Escolha seu drink favorito e aproveite o momento.</p>
+    </div>
+
+    <div class="lista-drinks-grid">
+
+      <article class="lista-drink">
+        <div><h3>Gin da Casa</h3><strong>R$ 23,00</strong></div>
+        <p>Gin, sumo de limão, xarope de gengibre, energético de morango com pêssego e espuma de gengibre.</p>
+      </article>
+
+      <article class="lista-drink">
+        <div><h3>Gin Tropical</h3><strong>R$ 20,00</strong></div>
+        <p>Gin, energético tropical e fatias de laranja.</p>
+      </article>
+
+      <article class="lista-drink">
+        <div><h3>Vodka Tropical</h3><strong>R$ 20,00</strong></div>
+        <p>Vodka, energético tropical e fatias de laranja.</p>
+      </article>
+
+      <article class="lista-drink">
+        <div><h3>Whiskey Sour GN Arena</h3><strong>R$ 20,00</strong></div>
+        <p>Scotch whisky, sumo de limão e xarope de mel.</p>
+      </article>
+
+      <article class="lista-drink">
+        <div><h3>Caipivodka de Morango</h3><strong>R$ 20,00</strong></div>
+        <p>Vodka, geleia de morango e limão.</p>
+      </article>
+
+      <article class="lista-drink">
+        <div><h3>Maracugin</h3><strong>R$ 20,00</strong></div>
+        <p>Gin, sumo de limão e geleia natural de maracujá.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.lista-drinks {
+  background: #101010;
+  color: #fff;
+  padding: 70px 20px;
+}
+
+.lista-drinks-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.lista-drinks-titulo {
+  margin-bottom: 35px;
+}
+
+.lista-drinks-titulo > span {
+  color: #48b96b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lista-drinks-titulo h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 900;
+  margin: 12px 0;
+}
+
+.lista-drinks-titulo h2 em {
+  color: #d92332;
+  font-style: normal;
+}
+
+.lista-drinks-titulo p {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.lista-drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lista-drink {
+  background: #181818;
+  border: 1px solid #333;
+  border-left: 3px solid #d92332;
+  border-radius: 5px;
+  padding: 23px;
+}
+
+.lista-drink > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.lista-drink h3 {
+  font-size: 16px;
+}
+
+.lista-drink strong {
+  color: #48b96b;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.lista-drink p {
+  color: #bdbdbd;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .lista-drinks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-drinks {
+    padding: 50px 18px;
   }
 }
 </style>
